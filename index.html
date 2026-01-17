@@ -251,6 +251,20 @@ footer{
 href="https://wa.me/918817644730?text=Hello%20I%20want%20Croma%20offers">
 💬 WhatsApp Chat
 </a>
+<script>
+async function send(){
+ let msg = input.value;
+ let res = await fetch("https://yourbot.onrender.com/chat",{
+   method:"POST",
+   headers:{"Content-Type":"application/json"},
+   body:JSON.stringify({message:msg})
+ });
+ let data = await res.json();
+ chat.innerHTML += `<p>You:${msg}</p><p>Bot:${data.reply}</p>`;
+}
+</script>
+  
+  
 
 </body>
 </html>
