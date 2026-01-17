@@ -228,18 +228,8 @@ footer{
   © 2026 Laxmi Electronics – Croma Store
 </footer>
 
-<script>
-async function send(){
- let msg = input.value;
- let res = await fetch("https://yourbot.onrender.com/chat",{
-   method:"POST",
-   headers:{"Content-Type":"application/json"},
-   body:JSON.stringify({message:msg})
- });
- let data = await res.json();
- chat.innerHTML += `<p>You:${msg}</p><p>Bot:${data.reply}</p>`;
-}
-</script>
+<iframe src="https://yourname.github.io/my-bot" width="100%" height="400"></iframe>
+
   
   
 
