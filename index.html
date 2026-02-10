@@ -2,128 +2,125 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Repair Appointment Booking</title>
+<title>Laxmi Electronics – Croma Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
+  margin:0;
   font-family:Arial;
   background:#f4f6f8;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
 }
 
-.card{
-  background:white;
+/* HEADER */
+header{
+  background:#0f766e;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
+
+/* BANNER */
+.banner img{ width:100%; }
+
+/* SECTIONS */
+section{
+  max-width:1100px;
+  margin:30px auto;
+  padding:0 15px;
+}
+
+/* OFFER */
+.offer{
+  background:#fde047;
   padding:30px;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  width:350px;
+  text-align:center;
+  border-radius:15px;
 }
 
-input{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-  border-radius:6px;
-  border:1px solid #ccc;
+/* CONTACT BUTTONS */
+.button{
+  display:block;
+  margin:10px 0;
+  padding:14px;
+  text-align:center;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
 }
+.call{background:#2563eb;}
+.whatsapp{background:#25D366;}
 
-button{
-  width:100%;
-  padding:12px;
+/* FLOAT BUTTONS */
+#wa-bot{
+  position:fixed;
+  bottom:90px;
+  right:20px;
   background:#25D366;
   color:white;
-  border:none;
-  border-radius:6px;
-  font-size:16px;
+  padding:12px 16px;
+  border-radius:50px;
+  text-decoration:none;
 }
 
-.status{
-  text-align:center;
-  margin-top:10px;
+#repair-btn{
+  position:fixed;
+  bottom:30px;
+  right:20px;
+  background:#f97316;
+  color:white;
+  padding:10px 14px;
+  border-radius:40px;
+  font-size:14px;
+  text-decoration:none;
+  box-shadow:0 4px 8px rgba(0,0,0,0.3);
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<header>
+<h1>Laxmi Electronics</h1>
+<p>Croma Store – Burhanpur MP</p>
+</header>
 
-<h2>Book Repair Appointment</h2>
-
-<input id="name" placeholder="Customer Name">
-<input id="phone" placeholder="Phone 91XXXXXXXXXX">
-<input id="birthday" placeholder="Birthday MM-DD">
-
-<input id="product" placeholder="Product (TV / AC / Fridge)">
-<input id="issue" placeholder="Problem / Issue">
-<input id="date" type="date">
-
-<button onclick="saveData()">Submit Booking</button>
-
-<div class="status" id="status"></div>
-
+<div class="banner">
+<img src="banner-le-2.png">
 </div>
 
-<script>
+<section>
+<div class="offer">
+<h2>🎉 Mega Appliance Offer 🎉</h2>
+<p>Discount on AC • TV • Fridge • Washing Machine</p>
+</div>
+</section>
 
-async function saveData(){
+<section>
+<h2>Contact Us</h2>
 
-const name=document.getElementById('name').value;
-const phone=document.getElementById('phone').value;
-const birthday=document.getElementById('birthday').value;
-const product=document.getElementById('product').value;
-const issue=document.getElementById('issue').value;
-const date=document.getElementById('date').value;
+<a class="button call" href="tel:918817644730">
+📞 Call Now
+</a>
 
-if(!name||!phone){
-document.getElementById('status').innerText="❌ Fill required fields";
-return;
-}
+<a class="button whatsapp"
+href="https://wa.me/918817644730">
+💬 WhatsApp Chat
+</a>
 
-const repoOwner="YOUR_GITHUB_USERNAME";
-const repoName="YOUR_REPO_NAME";
-const filePath="repair-bookings.csv";
-const token="YOUR_GITHUB_TOKEN";
+</section>
 
-const apiUrl=`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`;
+<!-- FLOAT BUTTONS -->
 
-try{
+<a id="wa-bot"
+href="https://wa.me/918817644730">
+💬 Chat
+</a>
 
-const getFile=await fetch(apiUrl,{
-headers:{Authorization:`token ${token}`}
-});
-
-const fileData=await getFile.json();
-const existingContent=atob(fileData.content);
-
-const newRow=`\n${name},${phone},${birthday},${product},${issue},${date}`;
-const updatedContent=btoa(existingContent+newRow);
-
-await fetch(apiUrl,{
-method:"PUT",
-headers:{
-Authorization:`token ${token}`,
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-message:"New Repair Booking",
-content:updatedContent,
-sha:fileData.sha
-})
-});
-
-document.getElementById('status').innerText="✅ Booking Saved";
-
-}catch(err){
-document.getElementById('status').innerText="❌ Error saving";
-}
-
-}
-
-</script>
+<a id="repair-btn"
+href="repair-booking.html">
+🛠️ Repair Booking
+</a>
 
 </body>
 </html>
