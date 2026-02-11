@@ -8,26 +8,34 @@
 <style>
 body{
   margin:0;
-  font-family:Arial;
+  font-family:Arial, sans-serif;
   background:#f4f6f8;
 }
 
 /* HEADER */
 header{
   background:#0f766e;
-  color:white;
+  color:#fff;
   text-align:center;
   padding:15px;
 }
 
 /* BANNER */
-.banner img{ width:100%; }
+.banner img{
+  width:100%;
+  display:block;
+}
 
 /* SECTIONS */
 section{
   max-width:1100px;
   margin:30px auto;
   padding:0 15px;
+}
+h2{
+  text-align:center;
+  color:#0f766e;
+  margin-bottom:20px;
 }
 
 /* OFFER */
@@ -38,7 +46,54 @@ section{
   border-radius:15px;
 }
 
-/* CONTACT BUTTONS */
+/* FESTIVE */
+.festive{
+  background:linear-gradient(135deg,#dc2626,#f97316);
+  color:white;
+  text-align:center;
+  padding:40px;
+  border-radius:20px;
+}
+.festive a{
+  background:white;
+  color:black;
+  padding:14px 28px;
+  border-radius:30px;
+  text-decoration:none;
+}
+
+/* SLIDER */
+.slider{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+}
+.slider img{
+  width:240px;
+  border-radius:12px;
+  background:white;
+  padding:10px;
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.product{
+  background:white;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+}
+.product img{
+  width:100%;
+  max-height:180px;
+  object-fit:contain;
+}
+
+/* BUTTONS */
 .button{
   display:block;
   margin:10px 0;
@@ -47,80 +102,237 @@ section{
   color:white;
   text-decoration:none;
   border-radius:8px;
+  font-size:18px;
+  cursor:pointer;
 }
 .call{background:#2563eb;}
 .whatsapp{background:#25D366;}
+.map{background:#dc2626;}
+.repair{background:#f97316;}
 
-/* FLOAT BUTTONS */
-#wa-bot{
-  position:fixed;
-  bottom:90px;
-  right:20px;
-  background:#25D366;
+/* FOOTER */
+footer{
+  background:#111827;
   color:white;
-  padding:12px 16px;
-  border-radius:50px;
-  text-decoration:none;
+  text-align:center;
+  padding:15px;
 }
 
-#repair-btn{
+/* POPUP FORM */
+.popup{
+  display:none;
   position:fixed;
-  bottom:30px;
-  right:20px;
-  background:#f97316;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+}
+
+.form-box{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  width:320px;
+}
+
+.form-box input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+.form-box button{
+  width:100%;
+  padding:12px;
+  background:#25D366;
   color:white;
-  padding:10px 14px;
-  border-radius:40px;
-  font-size:14px;
-  text-decoration:none;
-  box-shadow:0 4px 8px rgba(0,0,0,0.3);
+  border:none;
+  border-radius:6px;
+  margin-top:6px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
 <h1>Laxmi Electronics</h1>
-<p>Croma Store – Burhanpur MP</p>
+<p>Croma Store – Burhanpur MP 450331</p>
 </header>
 
+<!-- BANNER -->
 <div class="banner">
 <img src="banner-le-2.png">
 </div>
 
+<!-- OFFER -->
 <section>
 <div class="offer">
-<h2>🎉 Mega Appliance Offer 🎉</h2>
-<p>Discount on AC • TV • Fridge • Washing Machine</p>
+<h2>🎉 Mega Croma Offer 🎉</h2>
+<p>Discount on AC • TV • Refrigerator • Washing Machine</p>
 </div>
 </section>
 
+<!-- FESTIVE -->
+<section>
+<div class="festive">
+<h1>🎇 FESTIVE SALE 🎇</h1>
+<h2>Best Deals on Croma Products</h2>
+<p>Easy EMI • Free Delivery • Limited Time</p>
+<a href="https://wa.me/918817644730?text=Hello%20I%20want%20Croma%20offers">
+💬 WhatsApp for Offers
+</a>
+</div>
+</section>
+
+<!-- SLIDER -->
+<section>
+<h2>🔥 Trending Products</h2>
+<div class="slider">
+<img src="tv2.webp">
+<img src="fridge.webp">
+<img src="ac.webp">
+<img src="FpVZs4JOOfeQyKKIQ5z9k6lHIGUYqlmwK6STkNUu.webp">
+<img src="geyser.webp">
+<img src="washingmachine.webp">
+</div>
+</section>
+
+<!-- PRODUCTS -->
+<section>
+<h2>Our Products</h2>
+<div class="products">
+<div class="product"><img src="tv2.webp"><h3>Smart TV</h3></div>
+<div class="product"><img src="fridge.webp"><h3>Refrigerator</h3></div>
+<div class="product"><img src="ac.webp"><h3>Air Conditioner</h3></div>
+<div class="product"><img src="FpVZs4JOOfeQyKKIQ5z9k6lHIGUYqlmwK6STkNUu.webp"><h3>Wireless Earbuds</h3></div>
+<div class="product"><img src="geyser.webp"><h3>Geyser</h3></div>
+<div class="product"><img src="washingmachine.webp"><h3>Washing Machine</h3></div>
+</div>
+</section>
+
+<!-- SHOWROOM -->
+<section>
+<h2>Our Showroom</h2>
+<img src="showroom.jpeg" style="width:100%;border-radius:15px;">
+</section>
+
+<!-- CONTACT -->
 <section>
 <h2>Contact Us</h2>
 
-<a class="button call" href="tel:918817644730">
-📞 Call Now
-</a>
+<a class="button call" href="tel:8817644730">📞 Call Now</a>
 
 <a class="button whatsapp"
 href="https://wa.me/918817644730">
 💬 WhatsApp Chat
 </a>
 
+<a class="button map"
+href="https://maps.app.goo.gl/KuUuSZzBfqDebvhC8">
+📍 Get Directions
+</a>
+
+<a class="button repair"
+onclick="openForm()">
+🛠️ Book Repair
+</a>
+
 </section>
 
-<!-- FLOAT BUTTONS -->
+<footer>
+© 2026 Laxmi Electronics – Croma Store
+</footer>
 
-<a id="wa-bot"
-href="https://wa.me/918817644730">
-💬 Chat
-</a>
+<!-- POPUP FORM -->
+<div class="popup" id="popup">
 
-<a id="repair-btn"
-href="repair-booking.html">
-🛠️ Repair Booking
-</a>
+<div class="form-box">
+
+<h3>Repair Booking</h3>
+
+<input id="name" placeholder="Customer Name">
+
+<input id="phone"
+type="tel"
+placeholder="Mobile No (10 digits)"
+maxlength="10"
+oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)">
+
+<input id="product" placeholder="Product">
+<input id="issue" placeholder="Problem">
+
+<button onclick="sendBooking()">Submit</button>
+<button onclick="closeForm()" style="background:#dc2626">Close</button>
+
+<div id="status"></div>
+
+</div>
+</div>
+
+<script>
+
+function openForm(){
+document.getElementById("popup").style.display="flex";
+}
+
+function closeForm(){
+document.getElementById("popup").style.display="none";
+}
+
+async function sendBooking(){
+
+const name=document.getElementById('name').value;
+const phone=document.getElementById('phone').value;
+const product=document.getElementById('product').value;
+const issue=document.getElementById('issue').value;
+
+if(!name||!phone){
+status.innerText="❌ Fill required fields";
+return;
+}
+
+if(phone.length!==10){
+status.innerText="❌ Mobile must be 10 digits";
+return;
+}
+
+const botToken="8524734243:AAGxjqele7lEsSqehIDZJR-juTfQqElWP9Y
+";
+const chatId="-1003827071687";
+
+const message=
+`🛠️ New Repair Booking
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+
+📺 Product: ${product}
+📝 Issue: ${issue}`;
+
+await fetch(
+`https://api.telegram.org/bot${botToken}/sendMessage`,
+{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+chat_id:chatId,
+text:message
+})
+}
+);
+
+status.innerText="✅ Sent to Telegram";
+
+}
+
+</script>
 
 </body>
 </html>
