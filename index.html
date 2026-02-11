@@ -6,105 +6,112 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f4f6f8;
+margin:0;
+font-family:Arial, sans-serif;
+background:#f4f6f8;
 }
 
 /* HEADER */
 header{
-  background:#0f766e;
-  color:#fff;
-  text-align:center;
-  padding:15px;
+background:#0f766e;
+color:#fff;
+text-align:center;
+padding:15px;
 }
 
 /* BANNER */
 .banner img{
-  width:100%;
-  display:block;
+width:100%;
+display:block;
 }
 
 /* SECTIONS */
 section{
-  max-width:1100px;
-  margin:30px auto;
-  padding:0 15px;
+max-width:1100px;
+margin:30px auto;
+padding:0 15px;
 }
+
 h2{
-  text-align:center;
-  color:#0f766e;
-  margin-bottom:20px;
+text-align:center;
+color:#0f766e;
+margin-bottom:20px;
 }
 
 /* OFFER */
 .offer{
-  background:#fde047;
-  padding:30px;
-  text-align:center;
-  border-radius:15px;
+background:#fde047;
+padding:30px;
+text-align:center;
+border-radius:15px;
 }
 
 /* FESTIVE */
 .festive{
-  background:linear-gradient(135deg,#dc2626,#f97316);
-  color:white;
-  text-align:center;
-  padding:40px;
-  border-radius:20px;
+background:linear-gradient(135deg,#dc2626,#f97316);
+color:white;
+text-align:center;
+padding:40px;
+border-radius:20px;
 }
+
 .festive a{
-  background:white;
-  color:black;
-  padding:14px 28px;
-  border-radius:30px;
-  text-decoration:none;
+background:white;
+color:black;
+padding:14px 28px;
+border-radius:30px;
+text-decoration:none;
 }
 
 /* SLIDER */
 .slider{
-  display:flex;
-  gap:15px;
-  overflow-x:auto;
+display:flex;
+gap:15px;
+overflow-x:auto;
 }
+
 .slider img{
-  width:240px;
-  border-radius:12px;
-  background:white;
-  padding:10px;
+width:240px;
+border-radius:12px;
+background:white;
+padding:10px;
 }
 
 /* PRODUCTS */
 .products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
 }
+
 .product{
-  background:white;
-  padding:15px;
-  border-radius:12px;
-  text-align:center;
+background:white;
+padding:15px;
+border-radius:12px;
+text-align:center;
 }
+
 .product img{
-  width:100%;
-  max-height:180px;
-  object-fit:contain;
+width:100%;
+max-height:180px;
+object-fit:contain;
 }
 
 /* BUTTONS */
 .button{
-  display:block;
-  margin:10px 0;
-  padding:14px;
-  text-align:center;
-  color:white;
-  text-decoration:none;
-  border-radius:8px;
-  font-size:18px;
-  cursor:pointer;
+display:block;
+margin:10px 0;
+padding:14px;
+text-align:center;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-size:18px;
+cursor:pointer;
 }
+
 .call{background:#2563eb;}
 .whatsapp{background:#25D366;}
 .map{background:#dc2626;}
@@ -112,49 +119,51 @@ h2{
 
 /* FOOTER */
 footer{
-  background:#111827;
-  color:white;
-  text-align:center;
-  padding:15px;
+background:#111827;
+color:white;
+text-align:center;
+padding:15px;
 }
 
-/* POPUP FORM */
+/* POPUP */
 .popup{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.6);
-  justify-content:center;
-  align-items:center;
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+z-index:9999;
 }
 
 .form-box{
-  background:white;
-  padding:25px;
-  border-radius:12px;
-  width:320px;
+background:white;
+padding:25px;
+border-radius:12px;
+width:320px;
 }
 
 .form-box input{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-  border:1px solid #ccc;
-  border-radius:6px;
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:6px;
 }
 
 .form-box button{
-  width:100%;
-  padding:12px;
-  background:#25D366;
-  color:white;
-  border:none;
-  border-radius:6px;
-  margin-top:6px;
+width:100%;
+padding:12px;
+background:#25D366;
+color:white;
+border:none;
+border-radius:6px;
+margin-top:6px;
 }
+
 </style>
 </head>
 
@@ -239,10 +248,10 @@ href="https://maps.app.goo.gl/KuUuSZzBfqDebvhC8">
 📍 Get Directions
 </a>
 
-<a class="button repair"
+<button class="button repair"
 onclick="openForm()">
 🛠️ Book Repair
-</a>
+</button>
 
 </section>
 
@@ -251,7 +260,7 @@ onclick="openForm()">
 </footer>
 
 <!-- POPUP FORM -->
-<div class="popup" id="popup">
+<div id="popup" class="popup">
 
 <div class="form-box">
 
@@ -269,13 +278,17 @@ oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)">
 <input id="issue" placeholder="Problem">
 
 <button onclick="sendBooking()">Submit</button>
-<button onclick="closeForm()" style="background:#dc2626">Close</button>
+
+<button onclick="closeForm()" style="background:#dc2626">
+Close
+</button>
 
 <div id="status"></div>
 
 </div>
 </div>
 
+<!-- SCRIPT -->
 <script>
 
 function openForm(){
@@ -292,6 +305,7 @@ const name=document.getElementById('name').value;
 const phone=document.getElementById('phone').value;
 const product=document.getElementById('product').value;
 const issue=document.getElementById('issue').value;
+const status=document.getElementById('status');
 
 if(!name||!phone){
 status.innerText="❌ Fill required fields";
@@ -303,8 +317,9 @@ status.innerText="❌ Mobile must be 10 digits";
 return;
 }
 
-const botToken="8524734243:AAGxjqele7lEsSqehIDZJR-juTfQqElWP9Y
-";
+/* TELEGRAM */
+
+const botToken="8524734243:AAGxjqele7lEsSqehIDZJR-juTfQqElWP9Y";
 const chatId="-1003827071687";
 
 const message=
@@ -328,7 +343,7 @@ text:message
 }
 );
 
-status.innerText="✅ Sent to Telegram";
+status.innerText="✅ Sent to Telegram Group";
 
 }
 
