@@ -349,6 +349,7 @@ const message=
 📺 Product: ${product}
 📝 Issue: ${issue}`;
 🏠 Address: ${address}`;
+
 await fetch(
 `https://api.telegram.org/bot${botToken}/sendMessage`,
 {
@@ -361,8 +362,7 @@ text:message
 }
 );
 
-status.innerText="✅ Sent to Laxmi Electronics";
-
+status.innerText="✅ Sent to Telegram Group";
 }
 
 </script>
