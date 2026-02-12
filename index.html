@@ -277,6 +277,8 @@ oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)">
 
 <input id="product" placeholder="Product">
 <input id="issue" placeholder="Problem">
+<input id="address" placeholder="Customer Address">
+  
 
 <!-- NOTE / DISCLAIMER -->
 <p style="
@@ -320,6 +322,7 @@ const name=document.getElementById('name').value;
 const phone=document.getElementById('phone').value;
 const product=document.getElementById('product').value;
 const issue=document.getElementById('issue').value;
+const address=document.getElementById('address').value;
 const status=document.getElementById('status');
 
 if(!name||!phone){
