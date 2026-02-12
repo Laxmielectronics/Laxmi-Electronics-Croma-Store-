@@ -164,6 +164,15 @@ border-radius:6px;
 margin-top:6px;
 }
 
+.note{
+font-size:13px;
+background:#fff3cd;
+padding:10px;
+border-radius:6px;
+margin-top:8px;
+line-height:1.5;
+}
+
 </style>
 </head>
 
@@ -194,7 +203,7 @@ margin-top:6px;
 <h1>🎇 FESTIVE SALE 🎇</h1>
 <h2>Best Deals on Croma Products</h2>
 <p>Easy EMI • Free Delivery • Limited Time</p>
-<a href="https://wa.me/918817644730?text=Hello%20I%20want%20Croma%20offers">
+<a href="https://wa.me/918817644730">
 💬 WhatsApp for Offers
 </a>
 </div>
@@ -260,7 +269,6 @@ onclick="openForm()">
 </footer>
 
 <!-- POPUP FORM -->
-<!-- POPUP FORM -->
 <div id="popup" class="popup">
 
 <div class="form-box">
@@ -278,20 +286,11 @@ oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)">
 <input id="product" placeholder="Product">
 <input id="issue" placeholder="Problem">
 <input id="address" placeholder="Customer Address">
-  
 
-<!-- NOTE / DISCLAIMER -->
-<p style="
-font-size:13px;
-background:#fff3cd;
-padding:10px;
-border-radius:6px;
-margin-top:8px;
-line-height:1.5;
-">
+<p class="note">
 ⚠️ <b>Note:</b><br>
 • Minimum visiting charge of our engineer is <b>₹100</b>.<br>
-• Repair service is available <b>only in Burhanpur city</b>.
+• Repair service available <b>only in Burhanpur city</b>.
 </p>
 
 <button onclick="sendBooking()">Submit</button>
@@ -335,9 +334,8 @@ status.innerText="❌ Mobile must be 10 digits";
 return;
 }
 
-/* TELEGRAM */
-
-const botToken="8524734243:AAGxjqele7lEsSqehIDZJR-juTfQqElWP9Y";
+const botToken="8524734243:AAGxjqele7lEsSqehIDZJR-juTfQqElWP9Y
+";
 const chatId="-1003827071687";
 
 const message=
@@ -347,7 +345,8 @@ const message=
 📞 Phone: ${phone}
 
 📺 Product: ${product}
-📝 Issue: ${issue}`;
+📝 Issue: ${issue}
+
 🏠 Address: ${address}`;
 
 await fetch(
@@ -362,7 +361,8 @@ text:message
 }
 );
 
-status.innerText="✅ Sent to Telegram Group";
+status.innerText="✅ Sent to Laxmi Electronics";
+
 }
 
 </script>
