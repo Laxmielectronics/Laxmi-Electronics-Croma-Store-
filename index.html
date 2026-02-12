@@ -9,38 +9,129 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#f4f6f8;
 }
 
 /* HEADER */
 header{
 background:#0f766e;
-color:white;
+color:#fff;
 text-align:center;
 padding:15px;
+}
+
+header img{
+max-width:130px;
+}
+
+/* BANNER */
+.banner img{
+width:100%;
+display:block;
+}
+
+/* SECTIONS */
+section{
+max-width:1100px;
+margin:30px auto;
+padding:0 15px;
+}
+
+h2{
+text-align:center;
+color:#0f766e;
+margin-bottom:20px;
+}
+
+/* OFFER */
+.offer{
+background:#fde047;
+padding:30px;
+text-align:center;
+border-radius:15px;
+}
+
+/* FESTIVE */
+.festive{
+background:linear-gradient(135deg,#dc2626,#f97316);
+color:white;
+text-align:center;
+padding:40px;
+border-radius:20px;
+}
+
+.festive a{
+background:white;
+color:black;
+padding:14px 28px;
+border-radius:30px;
+text-decoration:none;
+}
+
+/* SLIDER */
+.slider{
+display:flex;
+gap:15px;
+overflow-x:auto;
+}
+
+.slider img{
+width:240px;
+border-radius:12px;
+background:white;
+padding:10px;
+}
+
+/* PRODUCTS */
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.product{
+background:white;
+padding:15px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product img{
+width:100%;
+max-height:180px;
+object-fit:contain;
 }
 
 /* BUTTONS */
 .button{
 display:block;
-margin:10px auto;
+margin:10px 0;
 padding:14px;
-width:260px;
 text-align:center;
 color:white;
-border:none;
+text-decoration:none;
 border-radius:8px;
 font-size:18px;
 cursor:pointer;
+border:none;
 }
 
-.repair{background:#f97316;}
 .call{background:#2563eb;}
 .whatsapp{background:#25D366;}
 .map{background:#dc2626;}
+.repair{background:#f97316;}
 
-/* POPUP FIX */
+/* FOOTER */
+footer{
+background:#111827;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+/* POPUP */
 .popup{
 display:none;
 position:fixed;
@@ -49,11 +140,9 @@ left:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.6);
-z-index:9999;
-
-/* FLEX CENTER */
 justify-content:center;
 align-items:center;
+z-index:9999;
 }
 
 .popup.show{
@@ -91,6 +180,7 @@ background:#fff3cd;
 padding:10px;
 border-radius:6px;
 margin-top:8px;
+line-height:1.5;
 }
 
 </style>
@@ -98,25 +188,98 @@ margin-top:8px;
 
 <body>
 
+<!-- HEADER -->
 <header>
+<img src="logo.png">
 <h1>Laxmi Electronics</h1>
-<p>Croma Store – Burhanpur MP</p>
+<p>Croma Store – Burhanpur MP 450331</p>
 </header>
 
-<!-- CONTACT BUTTONS -->
+<!-- BANNER -->
+<div class="banner">
+<img src="banner-le-2.png">
+</div>
 
-<button class="button call">📞 Call Now</button>
+<!-- OFFER -->
+<section>
+<div class="offer">
+<h2>🎉 Mega Croma Offer 🎉</h2>
+<p>Discount on AC • TV • Refrigerator • Washing Machine</p>
+</div>
+</section>
 
-<button class="button whatsapp">💬 WhatsApp Chat</button>
+<!-- FESTIVE -->
+<section>
+<div class="festive">
+<h1>🎇 FESTIVE SALE 🎇</h1>
+<h2>Best Deals on Croma Products</h2>
+<p>Easy EMI • Free Delivery • Limited Time</p>
+<a href="https://wa.me/918817644730">
+💬 WhatsApp for Offers
+</a>
+</div>
+</section>
 
-<button class="button map">📍 Get Directions</button>
+<!-- SLIDER -->
+<section>
+<h2>🔥 Trending Products</h2>
+<div class="slider">
+<img src="tv2.webp">
+<img src="fridge.webp">
+<img src="ac.webp">
+<img src="FpVZs4JOOfeQyKKIQ5z9k6lHIGUYqlmwK6STkNUu.webp">
+<img src="geyser.webp">
+<img src="washingmachine.webp">
+</div>
+</section>
 
-<!-- REPAIR BUTTON -->
-<button class="button repair" onclick="openForm()">
+<!-- PRODUCTS -->
+<section>
+<h2>Our Products</h2>
+<div class="products">
+<div class="product"><img src="tv2.webp"><h3>Smart TV</h3></div>
+<div class="product"><img src="fridge.webp"><h3>Refrigerator</h3></div>
+<div class="product"><img src="ac.webp"><h3>Air Conditioner</h3></div>
+<div class="product"><img src="FpVZs4JOOfeQyKKIQ5z9k6lHIGUYqlmwK6STkNUu.webp"><h3>Wireless Earbuds</h3></div>
+<div class="product"><img src="geyser.webp"><h3>Geyser</h3></div>
+<div class="product"><img src="washingmachine.webp"><h3>Washing Machine</h3></div>
+</div>
+</section>
+
+<!-- SHOWROOM -->
+<section>
+<h2>Our Showroom</h2>
+<img src="showroom.jpeg" style="width:100%;border-radius:15px;">
+</section>
+
+<!-- CONTACT -->
+<section>
+<h2>Contact Us</h2>
+
+<a class="button call" href="tel:8817644730">📞 Call Now</a>
+
+<a class="button whatsapp"
+href="https://wa.me/918817644730">
+💬 WhatsApp Chat
+</a>
+
+<a class="button map"
+href="https://maps.app.goo.gl/KuUuSZzBfqDebvhC8">
+📍 Get Directions
+</a>
+
+<button class="button repair"
+onclick="openForm()">
 🛠️ Book Repair
 </button>
 
-<!-- POPUP -->
+</section>
+
+<footer>
+© 2026 Laxmi Electronics – Croma Store
+</footer>
+
+<!-- POPUP FORM -->
 <div id="popup" class="popup">
 
 <div class="form-box">
@@ -137,33 +300,28 @@ oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)">
 
 <p class="note">
 ⚠️ Minimum visiting charge ₹100 <br>
-Service only in Burhanpur
+Service available only in Burhanpur
 </p>
 
 <button onclick="sendBooking()">Submit</button>
-
-<button onclick="closeForm()" style="background:red">
-Close
-</button>
+<button onclick="closeForm()" style="background:#dc2626">Close</button>
 
 <div id="status"></div>
 
 </div>
 </div>
 
+<!-- SCRIPT -->
 <script>
 
-/* OPEN POPUP */
 function openForm(){
 document.getElementById("popup").classList.add("show");
 }
 
-/* CLOSE POPUP */
 function closeForm(){
 document.getElementById("popup").classList.remove("show");
 }
 
-/* SEND TELEGRAM */
 async function sendBooking(){
 
 const name=document.getElementById('name').value;
